@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="s.dabrowski" id="Policy">
+        <createTable tableName="discount_policy_entity" catalogName="calculator">
+            <column name="id" type="bigint" autoIncrement="true" startWith="1000">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="enabled" type="boolean"/>
+            <column name="policy_type" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="s.dabrowski" id="Policie's Item">
+        <createTable tableName="discount_policy_values_entity" catalogName="calculator">
+            <column name="id" type="bigint" autoIncrement="true" startWith="1000">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="calculate_from" type="double"/>
+            <column name="calculate_value" type="double"/>
+            <column name="discount_policy_id" type="bigint"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "policyType": "AMOUNT",
+  "discountValueList": [
+    {
+      "from": 10,
+      "value": 2
+    },
+    {
+      "from": 30,
+      "value": 3
+    },
+    {
+      "from": 50,
+      "value": 5
+    }
+  ]
+}

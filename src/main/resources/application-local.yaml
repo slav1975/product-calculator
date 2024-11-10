@@ -1,0 +1,25 @@
+server.port: 4000
+  
+logging.level.root: info
+logging.level.pl.reactive11.product_calculator: debug
+
+spring:
+  application:
+    name: product-calculator
+  datasource:
+    url: jdbc:h2:mem:mydb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/dbchangelog.xml
+    enabled: true
+    parameters:
+      catalog-name: product-calculator

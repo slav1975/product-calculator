@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  product-calculator:
+    image: ${app_image}
+    container_name: "pl.r11.product-calculator"
+    ports:
+      - "4000:4000"
+    restart: always
+    depends_on:
+      - postgres
+  postgres:
+    image: ${postgres_image}
+    container_name: "pl.r11.product-calculator.psql"
+    environment:
+      POSTGRES_PASSWORD: product-calculator
+      POSTGRES_DB: product-calculator
+      POSTGRES_USER: product-calculator
+    ports:
+      - "5432:5432"
+    restart: always

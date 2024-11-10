@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "b71c0ff1-f93c-4ddf-b2f9-d5ffe1002d0d",
+		"name": "ProductCalculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29948857"
+	},
+	"item": [
+		{
+			"name": "Add Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"name\": \"Bespoke Bronze Car\",\n    \"price\": \"279.00\"\n  },\n  {\n    \"name\": \"Rustic Bronze Soap\",\n    \"price\": \"815.00\"\n  },\n  {\n    \"name\": \"Incredible Frozen Salad\",\n    \"price\": \"400.00\"\n  },\n  {\n    \"name\": \"Luxurious Granite Soap\",\n    \"price\": \"873.00\"\n  },\n  {\n    \"name\": \"Oriental Cotton Bacon\",\n    \"price\": \"574.00\"\n  },\n  {\n    \"name\": \"Licensed Soft Hat\",\n    \"price\": \"797.00\"\n  },\n  {\n    \"name\": \"Bespoke Steel Bacon\",\n    \"price\": \"821.00\"\n  },\n  {\n    \"name\": \"Electronic Fresh Shoes\",\n    \"price\": \"826.00\"\n  }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Amount Discount Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"enabled\": true,\n  \"policyType\": \"AMOUNT\",\n  \"discountValueList\": [\n    {\n      \"from\": 50,\n      \"value\": 1\n    },\n    {\n      \"from\": 10,\n      \"value\": 2\n    },\n    {\n      \"from\": 150,\n      \"value\": 3\n    },\n    {\n      \"from\": 200,\n      \"value\": 4\n    },\n    {\n      \"from\": 300,\n      \"value\": 5\n    },\n    {\n      \"from\": 600,\n      \"value\": 10\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/discounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"discounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Percentage Discount Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"enabled\": true,\n  \"policyType\": \"PERCENTAGE\",\n  \"discountValueList\": [\n    {\n      \"from\": 1000,\n      \"value\": 1\n    },\n    {\n      \"from\": 2000,\n      \"value\": 4\n    },\n    {\n      \"from\": 4000,\n      \"value\": 5\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/discounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"discounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"f1934e97-e944-4cca-a0f3-7f96b4e5c6b1\": 1200,\n    \"ffa665a3-c251-4301-8ccc-8a6c7332be1d\": 2000,\n    \"ef48149d-d808-43f7-b809-362022385a38\": 800\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/discounts/1001?enabled=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"discounts",
+						"1001"
+					],
+					"query": [
+						{
+							"key": "enabled",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable Policy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/discounts/1000?enabled=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"discounts",
+						"1000"
+					],
+					"query": [
+						{
+							"key": "enabled",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Discounts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
